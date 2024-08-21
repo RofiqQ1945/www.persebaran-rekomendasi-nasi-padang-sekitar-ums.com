@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PERSEBARAN REKOMEDASI NASI PADANG ENAK DAN MURAH DI SEKITAR UMS</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="files/bootstrap/css/bootstrap.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Times New Roman, Helvetica, sans-serif;
+            background-image: url(naspad2.jfif);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100%;
+        }
+        
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        /* Set a style for all buttons */
+        button {
+            background-color: #aa5404;
+            color: rgb(48, 8, 8);
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+        
+        /* Center the image and position the close button */
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+        
+        img.kebakaran {
+            width: 10%;
+            border-radius: 10%;
+        }
+        
+        .container {
+            padding: 16px;
+        }
+        
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+        
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+        
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+        
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s;
+        }
+        
+        @-webkit-keyframes animatezoom {
+            from {-webkit-transform: scale(0)} 
+            to {-webkit-transform: scale(1)}
+        }
+          
+        @keyframes animatezoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+        
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+        
+        /* Custom style for text color and size */
+        .warna-ukuran {
+            color: #04ff4f; /* Warna teks hijau */
+            font-size: 82px; /* Ukuran huruf 82 piksel */
+            font-family: Arial, sans-serif; /* Font keluarga Arial atau sans-serif */
+        }
+    </style>
+    
+    <!-- jQuery -->
+    <script src="files/js/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="files/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body onload="muatDaftarData();">
+
+    <p>PERSEBARAN REKOMENDASI NASI PADANG ENAK DAN MURAH DI SEKITAR UMS, Klik
+        <a href="nasipadangtitik.jpg">Disini</a>
+    </p>
+
+    <h2>Login</h2>
+    
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    
+    <div id="id01" class="modal">
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="nasipadang.jfif" alt="nasipadang" class="REKOMENDASI">
+            </div>
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2" ng-controller="listContactCtrl">
+        <div class="page-header">
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <h1><b>PERSEBARAN REKOMENDASI NASI PADANG ENAK DAN MURAH DI SEKITAR UMS</h1>
+            <ul class="nav nav-pills">
+                <li><a id="nav-tambah-data" href="javascript:void(0);" onclick="gantiMenu('tambah-data');">Tambah Data</a></li>
+            </ul>
+        </div>
+        <div id="tambah-data" class="well" style="display:none;">
+            <form id="form-data">
+                <div id="name-group" class="form-group">
+                    <label>Desa/Kelurahan:</label> 
+                    <input type="text" class="form-control" id="nama" name="nama" placeholder="contoh: Ngadirejo" /><br/>
+                </div>
+                <div id="alamat-group" class="form-group">
+                    <label>Kecamatan:</label> 
+                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="contoh: Kartasura" /><br/>
+                </div>
+                <div id="ket-group" class="form-group">
+                    <label>Kabupaten:</label> 
+                    <textarea class="form-control" id="ket" name="ket" placeholder="contoh: Sukoharjo"></textarea><br/>
+                </div>
+                <div id="ket-group" class="form-group">
+                    <label>Titik Koordinat:</label> 
+                    <textarea class="form-control" id="ket" name="ket" placeholder="contoh: 110.373917°, -7.815630°"></textarea><br/>
+                </div>
+                <input type="button" value="Simpan" onclick="simpanData();" class="btn btn-success btn-small"/>
+                <input type="reset" value="Reset" class="btn btn-warning btn-small"/>
+            </form>
+        </div>
+        <div id="Klik-Peta" class="well" style="display:none;"></div>
+        <div id="list-data" class="well">
+            Tidak ada data...
+        </div>
+    </div>  
+
+    <script>
+        function gantiMenu(menu){
+            if (menu == "list-data"){
+                muatDaftarData();
+                $('#tambah-data').hide();
+                $('#list-data').fadeIn();
+                $('#edit-data').hide();
+            }
+            else if (menu == "tambah-data"){
+                $('#tambah-data').fadeIn();
+                $('#list-data').hide();
+                $('#edit-data').hide();
+            }else if (menu == "edit-data"){
+                $('#edit-data').fadeIn();
+                $('#tambah-data').hide();
+                $('#list-data').hide();
+            }
+        }
+        
+        function muatDaftarData(){
+            if (localStorage.daftar_data && localStorage.id_data){
+                let daftar_data = JSON.parse(localStorage.getItem('daftar_data'));
+                let data_app = "";
+                
+                if (daftar_data.length > 0){
+                    data_app = '<table class="table">';
+                    data_app += '<thead>'+
+                                    '<th>ID</th>'+
+                                    '<th>nama</th>'+
+                                    '<th>alamat beli</th>'+
+                                    '<th>ket</th>'+
+                                    '<th>aksi</th>'+
+                                    '<th>aksi 2</th>'+
+                                  '</thead><tbody>';
+                                  
+                    for (let i in daftar_data){
+                        data_app += '<tr>';
+                        data_app += '<td>'+ daftar_data[i].id_data + ' </td>'+
+                                      '<td>'+ daftar_data[i].nama + ' </td>'+
+                                      '<td>'+ daftar_data[i].alamat + ' </td>'+
+                                      '<td>'+ daftar_data[i].ket + ' </td>'+
+                                      '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="hapusData(\''+daftar_data[i].id_data+'\')">Hapus</a></td>'+
+                                      '<td><a class="btn btn-warning btn-small" href="javascript:void(0)" onclick="editData(\''+daftar_data[i].id_data+'\')">Edit</a></td>';
+                        data_app += '</tr>';
+                    }
+                   data_app += '</tbody></table>';
+                } else {
+                    data_app = "Tidak ada data...";
+                }
+               
+               $('#list-data').html(data_app);
+               $('#list-data').hide();
+               $('#list-data').fadeIn(100);
+            }
+        }
+        
+        function editData(id){
+            if (localStorage.daftar_data && localStorage.id_data){
+                let daftar_data = JSON.parse(localStorage.getItem('daftar_data'));			
+                let idx_data = 0;
+                for (let i in daftar_data){
+                    if (daftar_data[i].id_data == id){
+                        $("#eid_data").val(daftar_data[i].id_data);
+                        $("#enama").val(daftar_data[i].nama);
+                        $("#ealamat").val(daftar_data[i].alamat);
+                        $("#eket").val(daftar_data[i].ket);
+                        daftar_data.splice(idx_data, 1);
+                    }
+                    idx_data ++;
+                }
+                gantiMenu('edit-data');
+            }
+        }
+        
+        function simpanData(){
+            let nama = $('#nama').val();
+            let alamat = $('#alamat').val();
+            let ket = $('#ket').val();
+            
+            let daftar_data, id_data;
+            if (localStorage.daftar_data && localStorage.id_data){
+                daftar_data = JSON.parse(localStorage.getItem('daftar_data'));
+                id_data = parseInt(localStorage.getItem('id_data'));
+            } else {
+                daftar_data = [];
+                id_data = 0;
+            }
+ 
+            id_data++;
+            daftar_data.push({'id_data':id_data, 'nama':nama, 'alamat':alamat, 'ket':ket});
+            localStorage.setItem('daftar_data', JSON.stringify(daftar_data));
+            localStorage.setItem('id_data', id_data);
+            document.getElementById('form-data').reset();
+            gantiMenu('list-data');
+            
+            return false;
+        }
+        
+        function simpanEditData(){
+            let id_data = $('#eid_data').val();
+            let nama = $('#enama').val();
+            let alamat = $('#ealamat').val();
+            let ket = $('#eket').val();
+            
+            let daftar_data = JSON.parse(localStorage.getItem('daftar_data'));
+            daftar_data.push({'id_data':id_data, 'nama':nama, 'alamat':alamat, 'ket':ket});
+            localStorage.setItem('daftar_data', JSON.stringify(daftar_data));
+            document.getElementById('eform-data').reset();
+            gantiMenu('list-data');
+            
+            return false;
+        }
+        
+        function hapusData(id){
+            if (localStorage.daftar_data && localStorage.id_data){
+                let daftar_data = JSON.parse(localStorage.getItem('daftar_data'));
+                
+                let idx_data = 0;
+                for (let i in daftar_data){
+                    if (daftar_data[i].id_data == id){
+                        daftar_data.splice(idx_data, 1);
+                    }
+                    idx_data ++;
+                }
+               
+                localStorage.setItem('daftar_data', JSON.stringify(daftar_data));
+                muatDaftarData();
+            }
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            var modal = document.getElementById('id01');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+<style>
+ .page-header h1 {
+    color: rgba(245, 94, 94, 0.8); /* Mengubah transparansi teks menjadi 70% */
+    font-size: 30px; /* Mengubah ukuran font menjadi 82 piksel */
+    font-family: Arial, sans-serif; /* Mengubah font menjadi Arial atau sans-serif */
+    text-align: left; /* Menyelaraskan teks di tengah */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Menambahkan bayangan teks */
+    margin-bottom: 20px; /* Mengatur margin bawah */
+}
+
+</style>
+</html>
